@@ -19,3 +19,18 @@
 [submodule "apis/pet-clinic"]
 	path = apis/pet-clinic
 	url = git@github.com:restgym/pet-clinic-api.git
+[submodule "tools/cats"]
+	path = tools/cats
+	url = git@github.com:restgym/cats-tool.git
+[submodule "tools/evomaster"]
+	path = tools/evomaster
+	url = git@github.com:restgym/evomaster-tool.git
+[submodule "tools/restest"]
+	path = tools/restest
+	url = git@github.com:restgym/restest-tool.git
+[submodule "tools/resttestgen"]
+	path = tools/resttestgen
+	url = git@github.com:restgym/resttestgen-tool.git
+[submodule "tools/schemathesis"]
+	path = tools/schemathesis
+	url = git@github.com:restgym/schemathesis-tool.git
