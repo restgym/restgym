@@ -30,7 +30,7 @@ fi
 if $DOCKER_CMD image inspect "$RESTGYM_IMAGE_NAME" > /dev/null 2>&1; then
   :
 else
-  echo "$RESTGYM Docker image not found in the system. Building... (Build occurs only once; subsequent runs will use the cached image.)"
+  echo "$RESTGYM Docker image not found in local image registry. Building... (Build occurs only once; subsequent runs will use the cached image.)"
   $DOCKER_CMD build --quiet -t "$RESTGYM_IMAGE_NAME" .
   if [ $? -eq 0 ]; then
     echo "$RESTGYM Docker build succeeded."
@@ -46,24 +46,32 @@ case "$1" in
 
   # Builds all the Docker images for APIs and tools
   build-images|b)
+    NEW_NAME="restgym-image-builder"
+    DOCKER_BASE_COMMAND=$(echo "$DOCKER_BASE_COMMAND" | sed "s|--name restgym|--name $NEW_NAME|")
     exec $DOCKER_BASE_COMMAND python3 src/build.py
     ;;
 
 
   # Launches the experiment
   launch-experiment|l)
+    NEW_NAME="restgym-experiment-launcher"
+    DOCKER_BASE_COMMAND=$(echo "$DOCKER_BASE_COMMAND" | sed "s|--name restgym|--name $NEW_NAME|")
     exec $DOCKER_BASE_COMMAND python3 src/run.py
     ;;
 
 
   # Checks for the integrity of raw data from experiments
   verify-data|v)
+    NEW_NAME="restgym-data-verifier"
+    DOCKER_BASE_COMMAND=$(echo "$DOCKER_BASE_COMMAND" | sed "s|--name restgym|--name $NEW_NAME|")
     exec $DOCKER_BASE_COMMAND python3 src/check.py
     ;;
 
 
   # Process raw data to extract structured results
   analyze-data|a)
+    NEW_NAME="restgym-data-analyzer"
+    DOCKER_BASE_COMMAND=$(echo "$DOCKER_BASE_COMMAND" | sed "s|--name restgym|--name $NEW_NAME|")
     exec $DOCKER_BASE_COMMAND python3 src/process_results.py
     ;;
 
