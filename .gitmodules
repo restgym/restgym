@@ -1,0 +1,36 @@
+[submodule "apis/blog"]
+	path = apis/blog
+	url = git@github.com:restgym/blog-api.git
+[submodule "apis/erc20"]
+	path = apis/erc20
+	url = git@github.com:restgym/erc20-api.git
+[submodule "apis/flight-search"]
+	path = apis/flight-search
+	url = git@github.com:restgym/flight-search-api.git
+[submodule "apis/gestao-hospital"]
+	path = apis/gestao-hospital
+	url = git@github.com:restgym/gestao-hospital-api.git
+[submodule "apis/kafka-rest-proxy"]
+	path = apis/kafka-rest-proxy
+	url = git@github.com:restgym/kafka-rest-proxy-api.git
+[submodule "apis/notebook-manager"]
+	path = apis/notebook-manager
+	url = git@github.com:restgym/notebook-manager-api.git
+[submodule "apis/pet-clinic"]
+	path = apis/pet-clinic
+	url = git@github.com:restgym/pet-clinic-api.git
+[submodule "tools/cats"]
+	path = tools/cats
+	url = git@github.com:restgym/cats-tool.git
+[submodule "tools/evomaster"]
+	path = tools/evomaster
+	url = git@github.com:restgym/evomaster-tool.git
+[submodule "tools/restest"]
+	path = tools/restest
+	url = git@github.com:restgym/restest-tool.git
+[submodule "tools/resttestgen"]
+	path = tools/resttestgen
+	url = git@github.com:restgym/resttestgen-tool.git
+[submodule "tools/schemathesis"]
+	path = tools/schemathesis
+	url = git@github.com:restgym/schemathesis-tool.git
