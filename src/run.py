@@ -349,7 +349,6 @@ if __name__ == "__main__":
 
     # Do not execute the following configurations (e.g., a tool does not support an API, or it is known to crash)
     skip_runs = [
-        {'api': 'pet-clinic', 'tool': 'schemathesis'},          # Crashes while parsing regex
         {'api': 'flight-search', 'tool': 'autoresttest'},       # Crashes after 5 minutes
         {'api': 'flight-search', 'tool': 'restest'},            # Crashes
         {'api': 'features-service', 'tool': 'evomaster'},       # API Crashes
